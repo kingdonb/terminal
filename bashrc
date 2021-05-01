@@ -7,4 +7,8 @@ if [ -f /root/.bash_aliases ]; then
     . /root/.bash_aliases
 fi
 
+. <(flux completion bash)
+
+. <(helm completion bash)
+
 export PS1="\[\e[32m\]okteto\[\e[m\]> "

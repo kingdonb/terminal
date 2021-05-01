@@ -5,3 +5,7 @@ alias kd="kubectl describe"
 alias kl="kubectl logs"
 alias ktp="watch kubectl top pods"
 alias ktc="watch kubectl top pods --containers"
+alias kff='kubectl -n flux-system'
+alias kt='kubectl -n terminal'
+alias kj='kubectl -n jenkins'
+alias kw='kubectl -n wordpress'
