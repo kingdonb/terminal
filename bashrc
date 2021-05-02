@@ -1,11 +1,13 @@
 cat << EOF
-Welcome to your Kubernetes terminal. Happy coding!
+Welcome to the KubeCon / CloudNativeCon complimentary Flux shell
 EOF
 
 # add Alias definitions.
 if [ -f /root/.bash_aliases ]; then
     . /root/.bash_aliases
 fi
+
+. /etc/profile.d/bash_completion.sh
 
 . <(flux completion bash)
 

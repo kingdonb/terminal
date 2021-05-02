@@ -19,7 +19,8 @@ RUN mv /tmp/kubectx/bin/kubens /usr/local/bin/
 FROM alpine:3
 
 RUN apk add --no-cache bash curl iputils \
-  git vim git-perl git-email fzf gcc g++ build-base openssh-client
+  git vim git-perl git-email fzf gcc g++ build-base openssh-client \
+  bash-completion
 COPY bashrc /root/.bashrc
 COPY bash_git /root/.bash_git
 COPY gitconfig /root/.gitconfig
