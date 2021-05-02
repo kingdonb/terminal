@@ -19,8 +19,10 @@ RUN mv /tmp/kubectx/bin/kubens /usr/local/bin/
 FROM alpine:3
 
 RUN apk add --no-cache bash curl iputils \
-  git vim git-perl git-email fzf gcc g++ build-base
+  git vim git-perl git-email fzf gcc g++ build-base openssh-client
 COPY bashrc /root/.bashrc
+COPY bash_git /root/.bash_git
+COPY gitconfig /root/.gitconfig
 COPY bash_aliases /root/.bash_aliases
 
 COPY --from=build /usr/local/bin/gotty /usr/local/bin/gotty
@@ -33,4 +35,4 @@ COPY --from=flux /usr/local/bin/flux /usr/local/bin/flux
 
 ENV HOME /root
 EXPOSE 8080
-CMD ["sh", "-c", "/usr/local/bin/gotty --permit-write --reconnect /bin/bash"]
+CMD ["sh", "-c", "/usr/local/bin/gotty --permit-write --reconnect /bin/bash --login"]
